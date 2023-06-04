@@ -1,0 +1,10 @@
+css
+- nk bt file asing utk css kene buat file .css dan letak link di html file dalam <head>.
+- guna <link rel="stylesheet" href="nama file css yg dibuat" />
+
+javascript
+- kalau attribute class pakai '.',, id pakai '#'.
+- document.querySelector untuk target specific.
+- document.querySelectorAll untuk target large group.
+-kalau nk bt function button kene tambah element <button></button> pada benda nk ditekan.
+-

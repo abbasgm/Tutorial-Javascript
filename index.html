@@ -9,7 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/8d31125751.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8d31125751.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -22,10 +25,17 @@
         <div class="tableHeader">
           <div>table name</div>
           <div class="tableLogo">
-            <div><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
-            <div><i class="fa-sharp fa-solid fa-filter"></i></div>
+            <div>
+              <button id="searchButton">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div id="filterBtn">
+              <button>
+                <i class="fa-sharp fa-solid fa-filter"></i>
+              </button>
+            </div>
             <div><i class="fa-solid fa-sliders fa-rotate-90"></i></div>
-            
           </div>
         </div>
         <div class="tableHead">
@@ -55,5 +65,41 @@
         </div>
       </div>
     </div>
+
+    <script>
+      var ss = document.querySelector(".upper");
+      ss.style["background-color"] = "#ff0000";
+
+      var schBtn = document.querySelector("#searchButton");
+      var tableName = document.querySelector(".tableHeader > div:nth-child(1)");
+      var tekanBtn = function () {
+        tableName.textContent = "Search";
+      };
+      var keluar = function () {
+        tableName.textContent = "Table Name";
+      };
+
+      var filter = document.querySelector("#filterBtn");
+      var table = document.querySelector("table");
+
+      var addRow = function () {
+        var count = document.querySelectorAll('table > tbody > tr').length;
+        var row = table.insertRow(count);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "NEW CELL1";
+        cell2.innerHTML = "NEW CELL2";
+        cell3.innerHTML = "NEW CELL3";
+        cell4.innerHTML = "NEW CELL4";
+        cell5.innerHTML = "NEW CELL5";
+      };
+
+      filter.onclick = addRow;
+      schBtn.onmouseover = tekanBtn;
+      schBtn.onmouseout = keluar;
+    </script>
   </body>
 </html>
